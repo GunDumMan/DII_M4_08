@@ -1,15 +1,18 @@
-var outputContainer = document.getElementById('container-output')
-var counter = 0;
-function addNode() {
-    newNode = document.createElement('div')
-    newNode.classList.add('flex-item')
-    newNode.setAttribute('id', counter)
-    newNode.innerText = counter
-    counter++;
-    newNode.innerText = counter
-    outputContainer.appendChild(newNode)
+var searchButton = document.getElementById('searchButton')
+var inputText = document.getElementById('inputText')
+var output = document.getElementById('output')
+
+function addText() {
+    let text = inputText.value
+    console.log(text)
+    let newButton = document.createElement('button')
+    newButton.classList.add('btn')
+    newButton.classList.add('btn-outline-primary')
+    newButton.classList.add('m-2')
+    newButton.classList.add('p-2')
+    newButton.setAttribute('type', 'button')
+    newButton.innerText = text
+    output.appendChild(newButton)
 }
 
-function onOKClicked(e) {
-    addNode();
-}
+searchButton.addEventListener('click', addText)
