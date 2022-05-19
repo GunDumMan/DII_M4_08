@@ -1,17 +1,12 @@
+document.getElementById('ok').addEventListener('click', function (e) {
+    let noElement = document.getElementById('no');
+    if (noElement.classList.contains('toggleOn')) {
+        noElement.classList.replace('toggleOn', 'toggleOff');
 
-document.getElementById('cancel').addEventListener('mousemove', function (e) {
-    console.log('x : ' + e.screenX + ' y: ' + e.screenY);
+    } else if (noElement.classList.contains('toggleOff')) {
+        noElement.classList.replace('toggleOff', 'toggleOn');
+
+    } else {
+        noElement.classList.add('toggleOn')
+    }
 })
-
-let elems = document.getElementsByClassName('flex-item');
-console.log(elems);
-
-for (let elem of elems) {
-    elem.addEventListener('mousemove', function (e) {
-        console.log('x: ' + e.screenX + ' y: ' + e.screenY);
-    })
-
-    elem.addEventListener('click', function (e) {
-        alert(elem.innerText);
-    })
-}
