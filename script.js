@@ -8,11 +8,11 @@ document.getElementById('ok').addEventListener('click', function (e) {
     document.getElementById('no').style.marginLeft = `${bordertrick}px`;
 })
 
-const text = ["วิชานี้", "ง่าย", "จริงๆนะ", "OK"]
+const text = ['วิชานี้', 'ง่าย', 'จริงๆนะ', 'OK']
 let i = 0
 document.getElementById('no').addEventListener('dblclick', function (e) {
     document.getElementById('ok').innerText = text[i];
-    if (i > 2) {
+    if (i > text.length - 2) {
         i = 0
     } else {
         i++;
