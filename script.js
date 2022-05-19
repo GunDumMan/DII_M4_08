@@ -1,17 +1,14 @@
-
-document.getElementById('cancel').addEventListener('mousemove', function (e) {
-    console.log('x : ' + e.screenX + ' y: ' + e.screenY);
-})
-
-let elems = document.getElementsByClassName('flex-item');
-console.log(elems);
-
+let elems = document.getElementsByClassName('flex-item')
 for (let elem of elems) {
-    elem.addEventListener('mousemove', function (e) {
-        console.log('x: ' + e.screenX + ' y: ' + e.screenY);
-    })
-
     elem.addEventListener('click', function (e) {
-        alert(elem.innerText);
+        e.stopPropagation();
+        document.getElementById('empty').innerText += ' ' + (elem.innerText);
     })
 }
+
+document.getElementById('container').addEventListener('click', function (e) {
+    document.getElementById('empty').innerText = '';
+})
+
+
+
