@@ -1,14 +1,15 @@
-let elems = document.getElementsByClassName('flex-item')
-for (let elem of elems) {
-    elem.addEventListener('click', function (e) {
-        e.stopPropagation();
-        document.getElementById('empty').innerText += ' ' + (elem.innerText);
-    })
+var outputContainer = document.getElementById('container-output')
+var counter = 0;
+function addNode() {
+    newNode = document.createElement('div')
+    newNode.classList.add('flex-item')
+    newNode.setAttribute('id', counter)
+    newNode.innerText = counter
+    counter++;
+    newNode.innerText = counter
+    outputContainer.appendChild(newNode)
 }
 
-document.getElementById('container').addEventListener('click', function (e) {
-    document.getElementById('empty').innerText = '';
-})
-
-
-
+function onOKClicked(e) {
+    addNode();
+}

@@ -27,17 +27,8 @@
 
 .container-output {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     background-color: blue;
     padding: 30px;
-
-}
-
-#empty {
-    display: flex;
-    flex-flow: row wrap;
-    background-color: white;
-    padding: 1rem;
-    flex-basis: 1rem;
-    font-size: 2rem;
 }
